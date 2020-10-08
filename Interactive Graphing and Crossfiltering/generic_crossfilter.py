@@ -29,6 +29,7 @@ app.layout = html.Div([
     )
 ], className='row')
 
+
 def get_figure(df, x_col, y_col, selectedpoints, selectedpoints_local):
 
     if selectedpoints_local and selectedpoints_local['range']:

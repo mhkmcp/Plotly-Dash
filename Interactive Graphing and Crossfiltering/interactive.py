@@ -29,7 +29,7 @@ fig = px.scatter(df, x="x", y="y", color="fruit", custom_data=["customdata"])
 
 fig.update_layout(clickmode='event+select')
 
-fig.update_traces(marker_size=20)
+fig.update_traces(marker_size=30)
 
 app.layout = html.Div([
     dcc.Graph(
@@ -102,8 +102,6 @@ def display_click_data(clickData):
 @app.callback(
     Output('selected-data', 'children'),
     [Input('basic-interactions', 'selectedData')])
-
-
 def display_selected_data(selectedData):
     return json.dumps(selectedData, indent=2)
 
@@ -111,8 +109,6 @@ def display_selected_data(selectedData):
 @app.callback(
     Output('relayout-data', 'children'),
     [Input('basic-interactions', 'relayoutData')])
-
-
 def display_relayout_data(relayoutData):
     return json.dumps(relayoutData, indent=2)
 
